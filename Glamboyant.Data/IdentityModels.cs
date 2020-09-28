@@ -32,6 +32,8 @@ namespace Glamboyant.Data
             return new ApplicationDbContext();
         }
 
+        public DbSet<HairService> HairServices { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder

@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HairServiceService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Glamboyant.Data\Glamboyant.Data.csproj">
+      <Project>{fb00a9e8-c686-4d48-a43b-a02b48293c3f}</Project>
+      <Name>Glamboyant.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Glamboyant.Models\Glamboyant.Models.csproj">
+      <Project>{f7a2ad2c-6e8e-4656-b0cf-06b85e742b02}</Project>
+      <Name>Glamboyant.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
