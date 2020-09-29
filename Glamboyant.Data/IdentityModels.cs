@@ -33,6 +33,7 @@ namespace Glamboyant.Data
         }
 
         public DbSet<HairService> HairServices { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
