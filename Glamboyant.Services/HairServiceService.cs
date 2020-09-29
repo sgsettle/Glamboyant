@@ -92,5 +92,20 @@ namespace Glamboyant.Services
                 return hs.SaveChanges() == 1;
             }
         }
+
+        public bool DeleteHairService(int hairServiceID)
+        {
+            using (var hs = new ApplicationDbContext())
+            {
+                var entity =
+                    hs
+                        .HairServices
+                        .Single(e => e.HairServiceId == hairServiceID && e.OwnerID == _userId);
+
+                hs.HairServices.Remove(entity);
+
+                return hs.SaveChanges() == 1;
+            }
+        }
     }
 }

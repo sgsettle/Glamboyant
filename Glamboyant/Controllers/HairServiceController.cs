@@ -92,6 +92,29 @@ namespace Glamboyant.Controllers
             return View(model);
         }
 
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateHairServiceService();
+            var model = svc.GetServiceByID(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteHairService(int id)
+        {
+            var service = CreateHairServiceService();
+
+            service.DeleteHairService(id);
+
+            TempData["SaveResult"] = "Your service was deleted.";
+
+            return RedirectToAction("Index");
+        }
+
         private HairServiceService CreateHairServiceService()
         {
             var userID = Guid.Parse(User.Identity.GetUserId());
