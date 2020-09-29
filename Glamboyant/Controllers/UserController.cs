@@ -20,8 +20,7 @@ namespace Glamboyant.Controllers
             var model = service.GetUsers();
             return View(model);
         }
-
-        public ActionResult Create()
+                public ActionResult Create()
         {
             return View();
         }
