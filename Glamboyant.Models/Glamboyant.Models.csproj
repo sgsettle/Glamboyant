@@ -55,6 +55,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HairServiceModels\HairServiceCreate.cs" />
+    <Compile Include="HairServiceModels\HairServiceDetail.cs" />
+    <Compile Include="HairServiceModels\HairServiceEdit.cs" />
     <Compile Include="HairServiceModels\HairServiceListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

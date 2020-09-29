@@ -237,6 +237,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\HairService\Index.cshtml" />
     <Content Include="Views\HairService\Create.cshtml" />
+    <Content Include="Views\HairService\Details.cshtml" />
+    <Content Include="Views\HairService\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -45,6 +45,53 @@ namespace Glamboyant.Controllers
             return View(model);
         }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreateHairServiceService();
+            var model = svc.GetServiceByID(id);
+
+            return View(model);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var service = CreateHairServiceService();
+            var detail = service.GetServiceByID(id);
+            var model =
+                new HairServiceEdit
+                {
+                    HairServiceID = detail.HairServiceID,
+                    Name = detail.Name,
+                    Description = detail.Description,
+                    Price = detail.Price
+                };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, HairServiceEdit model)
+        {
+            if(!ModelState.IsValid) return View(model);
+
+            if (model.HairServiceID != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreateHairServiceService();
+
+            if (service.UpdateHairService(model))
+            {
+                TempData["SaveResult"] = "Your service was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your service could not be updated.");
+            return View(model);
+        }
+
         private HairServiceService CreateHairServiceService()
         {
             var userID = Guid.Parse(User.Identity.GetUserId());
