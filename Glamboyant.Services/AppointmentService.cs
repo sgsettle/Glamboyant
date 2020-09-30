@@ -46,6 +46,7 @@ namespace Glamboyant.Services
                             e =>
                                 new AppointmentListItem
                                 {
+                                    AppointmentID = e.AppointmentID,
                                     AppointmentDate = e.AppointmentDate,
                                     HairServiceID = e.HairServiceID,
                                     UserID = e.UserID

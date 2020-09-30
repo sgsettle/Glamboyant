@@ -8,6 +8,7 @@ namespace Glamboyant.Models.AppointmentModels
 {
     public class AppointmentListItem
     {
+        public int AppointmentID { get; set; }
         public DateTime AppointmentDate { get; set; }
 
         public int HairServiceID { get; set; }

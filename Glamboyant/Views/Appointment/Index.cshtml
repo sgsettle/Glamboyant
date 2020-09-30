@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Glamboyant.Models.AppointmentModels.AppointmentListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AppointmentDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HairServiceID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    @Html.HiddenFor(modelItem => item.AppointmentID)
+    <td>
+        @Html.DisplayFor(modelItem => item.AppointmentDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.HairServiceID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.UserID)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.AppointmentID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.AppointmentID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.AppointmentID })
+    </td>
+</tr>
+}
+
+</table>

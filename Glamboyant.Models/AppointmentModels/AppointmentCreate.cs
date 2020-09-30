@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace Glamboyant.Models.AppointmentModels
 {
     public class AppointmentCreate
     {
+        [Required]
         public DateTime AppointmentDate { get; set; }
 
         public int HairServiceID { get; set; }

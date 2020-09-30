@@ -13,6 +13,7 @@ namespace Glamboyant.Data
         [Key]
         public int AppointmentID { get; set; }
 
+        [Required]
         public DateTime AppointmentDate { get; set; }
 
         [ForeignKey(nameof(HairService))]
