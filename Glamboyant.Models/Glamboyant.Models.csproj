@@ -63,6 +63,10 @@
     <Compile Include="HairServiceModels\HairServiceEdit.cs" />
     <Compile Include="HairServiceModels\HairServiceListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReviewModels\ReviewCreate.cs" />
+    <Compile Include="ReviewModels\ReviewDetail.cs" />
+    <Compile Include="ReviewModels\ReviewEdit.cs" />
+    <Compile Include="ReviewModels\ReviewListItem.cs" />
     <Compile Include="UserModels\UserCreate.cs" />
     <Compile Include="UserModels\UserDetail.cs" />
     <Compile Include="UserModels\UserEdit.cs" />
