@@ -54,6 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppointmentModels\AppointmentCreate.cs" />
+    <Compile Include="AppointmentModels\AppointmentDetail.cs" />
+    <Compile Include="AppointmentModels\AppointmentEdit.cs" />
+    <Compile Include="AppointmentModels\AppointmentListItem.cs" />
     <Compile Include="HairServiceModels\HairServiceCreate.cs" />
     <Compile Include="HairServiceModels\HairServiceDetail.cs" />
     <Compile Include="HairServiceModels\HairServiceEdit.cs" />
