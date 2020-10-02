@@ -186,6 +186,7 @@
     <Content Include="Assets\blowdryer.png" />
     <Content Include="Assets\GlamboyantLogo.png" />
     <Content Include="Assets\Hair1.jpg" />
+    <Content Include="Assets\hair2.jpg" />
     <Content Include="Assets\spraytan.png" />
     <Content Include="Assets\stylist.png" />
     <Content Include="Content\bootstrap-theme.css" />

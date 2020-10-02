@@ -10,7 +10,7 @@
         <h1 class="jumboHeader" style="text-align:center;">Bringing beauty to you</h1>
         <p class="lead" style="text-align:center;">In-home hair, makeup, nail services, and more</p>
         <p class="lead" style="text-align:center;">Anytime, Anywhere</p>
-        <p class="text-center"><a href="~/Views/Appointment/Create.cshtml" class="btn btn-lg" style="align-items:center; background-color:hotpink !important; color: white !important;">Book Now &raquo;</a></p>
+        <p class="text-center"><a href="@Url.Action("Index", "Appointment")" class="btn btn-lg" style="align-items:center; background-color:hotpink !important; color: white !important;">Book Now &raquo;</a></p>
     </div>
 </div>
 
@@ -39,7 +39,9 @@
         <p style="text-align:center;">Every beauty professional is put through rigorous training before being accepted into our network.</p>
     </div>
 
-    <div style="height: 300px;"></div>
+    <div class="text-center">
+        <img src="~/Assets/hair2.jpg" style="height:375px; width:900px;" />
+    </div>
 
     <div class="row text-center" style="margin-left:0px;">
         <h2 style="text-align:center;">Just a few of our popular services</h2>
@@ -49,19 +51,25 @@
             <h3 style="color:hotpink;">Blowout</h3>
             <p>Wet hair with a blowout and iron work catered to your preferred style.</p>
             </br>
-            <p style="color:magenta;">Starting at $55</p>
+            <p style="color:hotpink;">Starting at $55</p>
         </div>
         <div class="col-md-4" style="        box-shadow: 0 0 5px 3px lightgrey;   width:370px;    margin-right:15px;">
             <h3 style="color:hotpink;">Manicure</h3>
             <p>Choice of our polish or yours with shaping, cuticles, lotion, and option for shellac.</p>
             </br>
-            <p style="color:magenta;">Starting at $40</p>
+            <p style="color:hotpink;">Starting at $40</p>
         </div>
         <div class="col-md-4" style="box-shadow: 0 0 5px 3px lightgrey; width: 370px;">
             <h3 style="color:hotpink;">Makeup</h3>
             <p>Natural, sexy, or dramatic; we'll create the perfect look for you.</p>
             </br>
-            <p style="color:magenta;">Starting at $85</p>
+            <p style="color:hotpink;">Starting at $85</p>
         </div>
+    </div>
+
+    <div>
+        <img src="~/Assets/GlamboyantLogo.png" style="height:300px; width: 500px;" />
+        </br>
+        <h3>Someone who is an exotrovert who embodies the qualities of style, fabulousness, and intelligent wit.</h3>
     </div>
 </div>
