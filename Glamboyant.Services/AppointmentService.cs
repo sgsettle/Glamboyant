@@ -23,6 +23,8 @@ namespace Glamboyant.Services
                 new Appointment()
                 {
                     AppointmentDate = model.AppointmentDate,
+                    AppointmentTime = model.AppointmentTime,
+                    Address = model.Address,
                     HairServiceID = model.HairServiceID,
                     UserID = model.UserID
                 };
@@ -48,6 +50,8 @@ namespace Glamboyant.Services
                                 {
                                     AppointmentID = e.AppointmentID,
                                     AppointmentDate = e.AppointmentDate,
+                                    AppointmentTime = e.AppointmentTime,
+                                    Address = e.Address,
                                     HairServiceID = e.HairServiceID,
                                     UserID = e.UserID
                                 }
@@ -70,6 +74,8 @@ namespace Glamboyant.Services
                     {
                         AppointmentID = entity.AppointmentID,
                         AppointmentDate = entity.AppointmentDate,
+                        AppointmentTime = entity.AppointmentTime,
+                        Address = entity.Address,
                         HairServiceID = entity.HairServiceID,
                         UserID = entity.UserID
                     };
@@ -86,6 +92,8 @@ namespace Glamboyant.Services
                         .Single(e => e.AppointmentID == model.AppointmentID && e.User.OwnerID == _userID);
 
                 entity.AppointmentDate = model.AppointmentDate;
+                entity.AppointmentTime = model.AppointmentTime;
+                entity.Address = model.Address;
                 entity.HairServiceID = model.HairServiceID;
 
                 return apt.SaveChanges() == 1;

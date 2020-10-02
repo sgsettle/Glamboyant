@@ -12,7 +12,7 @@
 ">SERVICES</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", null, new { style = "color:hotpink" })
 </p>
 @if (TempData.ContainsKey("SaveResult"))
 {
@@ -26,9 +26,6 @@
 }
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.HairServiceID)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
@@ -45,9 +42,6 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.HairServiceID)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
@@ -57,9 +51,9 @@
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.HairServiceID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.HairServiceID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.HairServiceID })
+                @Html.ActionLink("Edit", "Edit", new { id = item.HairServiceID }, new { style = "color:hotpink" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.HairServiceID }, new { style = "color:hotpink" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.HairServiceID }, new { style = "color:hotpink" })
             </td>
         </tr>
     }

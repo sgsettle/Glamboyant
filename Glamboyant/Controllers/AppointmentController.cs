@@ -69,6 +69,8 @@ namespace Glamboyant.Controllers
                 new AppointmentEdit
                 {
                     AppointmentDate = detail.AppointmentDate,
+                    AppointmentTime = detail.AppointmentTime,
+                    Address = detail.Address,
                     HairServiceID = detail.HairServiceID,
                     UserID = detail.UserID
                 };

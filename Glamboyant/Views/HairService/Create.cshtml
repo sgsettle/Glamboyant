@@ -4,7 +4,11 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2 style="margin-top: 60px; 
+        text-align:center;
+        color: hotpink;
+        font-family: 'Megrim', cursive;
+        font-weight:600;">CREATE SERVICE</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,7 +16,6 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>HairServiceCreate</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -41,14 +44,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" style="background-color: hotpink !important; color: white !important;" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", null, new { style = "color:hotpink" })
 </div>
 
 @section Scripts {

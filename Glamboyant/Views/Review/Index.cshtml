@@ -4,21 +4,25 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+    <h2 style="        margin-top: 60px;
+        text-align: center;
+        color: hotpink;
+        font-family: 'Megrim', cursive;
+        font-weight:600;
+">
+        REVIEWS
+    </h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", null, new { style = "color:hotpink" })
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.ReviewID)
+            @Html.DisplayNameFor(model => model.Rating)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Text)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Rating)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.UserID)
@@ -29,21 +33,18 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.ReviewID)
+            @Html.DisplayFor(modelItem => item.Rating)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Text)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Rating)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.UserID)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new {  id=item.ReviewID }) |
-            @Html.ActionLink("Details", "Details", new {  id=item.ReviewID }) |
-            @Html.ActionLink("Delete", "Delete", new {  id=item.ReviewID })
+            @Html.ActionLink("Edit", "Edit", new {  id=item.ReviewID }, new { style = "color:hotpink" }) |
+            @Html.ActionLink("Details", "Details", new {  id=item.ReviewID }, new { style = "color:hotpink" }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.ReviewID }, new { style = "color:hotpink" })
         </td>
     </tr>
 }

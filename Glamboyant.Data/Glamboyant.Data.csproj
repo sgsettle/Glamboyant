@@ -73,6 +73,10 @@
     <Compile Include="Migrations\202009301925171_review.Designer.cs">
       <DependentUpon>202009301925171_review.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010021739475_appointmentUpdate.cs" />
+    <Compile Include="Migrations\202010021739475_appointmentUpdate.Designer.cs">
+      <DependentUpon>202010021739475_appointmentUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Review.cs" />
@@ -94,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009301925171_review.resx">
       <DependentUpon>202009301925171_review.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010021739475_appointmentUpdate.resx">
+      <DependentUpon>202010021739475_appointmentUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

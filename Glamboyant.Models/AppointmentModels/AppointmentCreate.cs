@@ -10,10 +10,22 @@ namespace Glamboyant.Models.AppointmentModels
     public class AppointmentCreate
     {
         [Required]
+        [DataType(DataType.Date)]
+        [Display(Name = "Appointment Date")]
         public DateTime AppointmentDate { get; set; }
 
+        [Required]
+        [DataType(DataType.Time)]
+        [Display(Name = "Appointment Time")]
+        public TimeSpan AppointmentTime { get; set; }
+
+        [Required]
+        public string Address { get; set; }
+
+        [Display(Name = "Service")]
         public int HairServiceID { get; set; }
 
+        [Display(Name = "Client")]
         public int UserID { get; set; }
     }
 }

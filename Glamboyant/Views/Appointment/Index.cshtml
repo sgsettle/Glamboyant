@@ -4,15 +4,26 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2 style="        margin-top: 60px;
+        text-align: center;
+        color: hotpink;
+        font-family: 'Megrim', cursive;
+        font-weight:600;
+">APPOINTMENTS</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", null, new { style = "color:hotpink" })
 </p>
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.AppointmentDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AppointmentTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.HairServiceID)
@@ -30,15 +41,21 @@
         @Html.DisplayFor(modelItem => item.AppointmentDate)
     </td>
     <td>
+        @Html.DisplayFor(modelItem => item.AppointmentTime)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Address)
+    </td>
+    <td>
         @Html.DisplayFor(modelItem => item.HairServiceID)
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.UserID)
     </td>
     <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.AppointmentID }) |
-        @Html.ActionLink("Details", "Details", new { id = item.AppointmentID }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.AppointmentID })
+        @Html.ActionLink("Edit", "Edit", new { id = item.AppointmentID }, new { style = "color:hotpink" }) |
+        @Html.ActionLink("Details", "Details", new { id = item.AppointmentID }, new { style = "color:hotpink" }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.AppointmentID }, new { style = "color:hotpink" })
     </td>
 </tr>
 }
