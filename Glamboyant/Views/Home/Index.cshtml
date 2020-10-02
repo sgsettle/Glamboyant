@@ -2,30 +2,66 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div style="background-color: white !important; height:500px;" class="jumbotron">
+    <div class="col-md-5">
+        <img src="~/Assets/Hair1.jpg" class="jumboImage" style="width:500px; height:400px;"/>
+    </div>
+    <div class="col-md-7" >
+        <h1 class="jumboHeader" style="text-align:center;">Bringing beauty to you</h1>
+        <p class="lead" style="text-align:center;">In-home hair, makeup, nail services, and more</p>
+        <p class="lead" style="text-align:center;">Anytime, Anywhere</p>
+        <p class="text-center"><a href="~/Views/Appointment/Create.cshtml" class="btn btn-lg" style="align-items:center; background-color:hotpink !important; color: white !important;">Book Now &raquo;</a></p>
+    </div>
 </div>
 
-<div class="row">
+<div class="row text-center" style="margin-bottom: 50px;">
+    <h2 style="text-align:center;">Glamboyant offers in-home beauty services by top beauty professionals.</h2>
+    </br>
+    </br>
     <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+        <img src="~/Assets/spraytan.png" style="height:70px; width:70px;" />
+        <h3 style="color: hotpink; text-align: center;
+">
+            Now offering in-home spraytans
+        </h3>
+        <p style="text-align:center;">
+            Whether it's just bronzing or looking like you just got back from vacation, Glamboyant spraytans start with a consultation and end with your perfect shade.
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <img src="~/Assets/blowdryer.png" style="height:70px; width:70px;" />
+        <h3 style="color:hotpink; text-align:center;">Glamboyant comes to you</h3>
+        <p style="text-align:center;">Whether in your home, office, or hotel; sit back and relax as we bring the best service straight to your door.</p>
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <img src="~/Assets/stylist.png" style="height:70px; width: 70px;" />
+        <h3 style="color:hotpink; text-align:center;">Work only with experts</h3>
+        <p style="text-align:center;">Every beauty professional is put through rigorous training before being accepted into our network.</p>
+    </div>
+
+    <div style="height: 300px;"></div>
+
+    <div class="row text-center" style="margin-left:0px;">
+        <h2 style="text-align:center;">Just a few of our popular services</h2>
+        </br>
+        </br>
+        <div class="col-md-4" style="box-shadow: 0 0 5px 3px lightgrey; margin-right:15px; width:370px;">
+            <h3 style="color:hotpink;">Blowout</h3>
+            <p>Wet hair with a blowout and iron work catered to your preferred style.</p>
+            </br>
+            <p style="color:magenta;">Starting at $55</p>
+        </div>
+        <div class="col-md-4" style="        box-shadow: 0 0 5px 3px lightgrey;   width:370px;    margin-right:15px;">
+            <h3 style="color:hotpink;">Manicure</h3>
+            <p>Choice of our polish or yours with shaping, cuticles, lotion, and option for shellac.</p>
+            </br>
+            <p style="color:magenta;">Starting at $40</p>
+        </div>
+        <div class="col-md-4" style="box-shadow: 0 0 5px 3px lightgrey; width: 370px;">
+            <h3 style="color:hotpink;">Makeup</h3>
+            <p>Natural, sexy, or dramatic; we'll create the perfect look for you.</p>
+            </br>
+            <p style="color:magenta;">Starting at $85</p>
+        </div>
     </div>
 </div>

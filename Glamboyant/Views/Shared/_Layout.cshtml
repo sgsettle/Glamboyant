@@ -9,7 +9,7 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-fixed-top" style="background-color: white !important; color: hotpink !important;">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -17,17 +17,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Glamboyant", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a href="~/Views/Home/Index.cshtml"><img src="~/Assets/GlamboyantLogo.png" class="logo" style="height:80px; width:150px;" /></a>
+               @* @Html.ActionLink("Glamboyant", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Services", "Index", "HairService")</li>
-                    <li>@Html.ActionLink("Book Now", "Index", "Appointment")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li style="color:hotpink !important;">@Html.ActionLink("Home", "Index", "Home", new { Style = "color:hotpink;"})</li>
+                    <li style="color: hotpink !important;">@Html.ActionLink("Services", "Index", "HairService", new { Style = "color:hotpink;" })</li>
+                    <li style="color: hotpink !important;">@Html.ActionLink("Book Now", "Index", "Appointment", new { Style = "color:hotpink;" })</li>
+                    <li style="color:hotpink !important;">@Html.ActionLink("About", "About", "Home", new { Style = "color:hotpink;" })</li>
+                    <li style="color:hotpink !important;">@Html.ActionLink("Contact", "Contact", "Home", new { Style = "color:hotpink;" })</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
+                @Html.Partial("_LoginPartial", new { Style = "color:hotpink;" })
             </div>
         </div>
     </div>
