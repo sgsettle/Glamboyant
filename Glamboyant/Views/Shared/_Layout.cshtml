@@ -6,6 +6,7 @@
     <title>@ViewBag.Title - Glamboyant</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -22,11 +23,12 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li style="color:hotpink !important;">@Html.ActionLink("Home", "Index", "Home", null, new { @style = "color:hotpink;" })</li>
-                    <li style="color: hotpink !important;">@Html.ActionLink("Services", "Index", "HairService", null, new { @style = "color:hotpink;" })</li>
-                    <li style="color: hotpink !important;">@Html.ActionLink("Book Now", "Index", "Appointment", null, new { @style = "color:hotpink;" })</li>
-                    <li style="color:hotpink !important;">@Html.ActionLink("About", "About", "Home", null, new { @style = "color:hotpink;" })</li>
-                    <li style="color:hotpink !important;">@Html.ActionLink("Contact", "Contact", "Home", null, new { @style = "color:hotpink;" })</li>
+                    <li>@Html.ActionLink("Home", "Index", "Home", null, new { @style = "color:hotpink;" })</li>
+                    <li>@Html.ActionLink("Services", "Index", "HairService", null, new { @style = "color:hotpink;" })</li>
+                    <li>@Html.ActionLink("Book Now", "Index", "Appointment", null, new { @style = "color:hotpink;" })</li>
+                    <li>@Html.ActionLink("Reviews", "Index", "Review", null, new { @style = "color:hotpink;" })</li>
+                    <li>@Html.ActionLink("About", "About", "Home", null, new { @style = "color:hotpink;" })</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home", null, new { @style = "color:hotpink;" })</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
