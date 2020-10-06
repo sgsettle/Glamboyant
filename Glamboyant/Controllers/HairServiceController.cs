@@ -21,6 +21,7 @@ namespace Glamboyant.Controllers
         }
 
         // GET: Create HairService
+        //[Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();

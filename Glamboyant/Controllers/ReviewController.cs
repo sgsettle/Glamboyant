@@ -1,4 +1,5 @@
-﻿using Glamboyant.Models.ReviewModels;
+﻿using Glamboyant.Data;
+using Glamboyant.Models.ReviewModels;
 using Glamboyant.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -11,13 +12,53 @@ namespace Glamboyant.Controllers
 {
     public class ReviewController : Controller
     {
+        private readonly ApplicationDbContext _db = new ApplicationDbContext();
+
         // GET: Appointment
         public ActionResult Index()
         {
-            var userID = Guid.Parse(User.Identity.GetUserId());
-            var service = new ReviewService(userID);
-            var model = service.GetReviews();
-            return View(model);
+            var content = _db.Reviews.Select(s => new
+            {
+                s.ReviewID,
+                s.Rating,
+                s.Text,
+                s.Image
+            });
+            
+            List<ReviewListItem> reviews = content.Select(item => new ReviewListItem()
+            {
+                ReviewID = item.ReviewID,
+                Rating = item.Rating,
+                Text = item.Text,
+                Image = item.Image
+            }).ToList();
+
+            return View(reviews);
+            //var userID = Guid.Parse(User.Identity.GetUserId());
+            //var service = new ReviewService(userID);
+            //var model = service.GetReviews();
+            //return View(model);
+        }
+
+        public ActionResult RetrieveImage(int id)
+        {
+            byte[] cover = GetImageFromDB(id);
+            if (cover != null)
+            {
+                return File(cover, "image/jpg");
+            }
+            else
+            {
+                return null;
+            }
+            
+        }
+
+        public byte[] GetImageFromDB(int id)
+        {
+            var q = from temp in _db.Reviews where temp.ReviewID == id select temp.Image;
+            byte[] cover = q.First();
+            return cover;
         }
 
         public ActionResult Create()
@@ -29,11 +70,18 @@ namespace Glamboyant.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(ReviewCreate model)
         {
+            HttpPostedFileBase file = Request.Files["ImageData"];
+            //var photoService = new ReviewCreate();
+            //int i = photoService.UploadImageInDatabase(file, model);
+            //if (i == 1)
+            //{
+            //    return RedirectToAction("Index");
+            //}
             if (!ModelState.IsValid) return View(model);
 
             var service = CreateReviewService();
 
-            if (service.CreateReview(model))
+            if (service.CreateReview(file, model))
             {
                 TempData["SaveResult"] = "Your review was created.";
                 return RedirectToAction("Index");

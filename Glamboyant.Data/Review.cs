@@ -13,9 +13,11 @@ namespace Glamboyant.Data
         [Key]
         public int ReviewID { get; set; }
 
+        public int Rating { get; set; }
+
         public string Text { get; set; }
 
-        public int Rating { get; set; }
+        public byte[] Image { get; set; }
 
         [ForeignKey(nameof(User))]
         public int UserID { get; set; }
