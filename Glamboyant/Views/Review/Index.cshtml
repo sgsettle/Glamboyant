@@ -4,18 +4,28 @@
     ViewBag.Title = "Index";
 }
 
-    <h2 style="        margin-top: 60px;
+<h2 style="        margin-top: 60px;
         text-align: center;
         color: hotpink;
         font-family: 'Megrim', cursive;
         font-weight:600;
 ">
-        REVIEWS
-    </h2>
+    REVIEWS
+</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create", null, new { style = "color:hotpink" })
 </p>
+@if (TempData.ContainsKey("SaveResult"))
+{
+    <div class="alert alert-success fade in" role="alert">
+
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>
+}
 <table class="table">
     <tr>
         <th>
@@ -33,26 +43,27 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.Rating)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Text)
-    </td>
-    <td>
-        <img src="/Review/RetrieveImage/@item.ReviewID" alt="" height=250 width=200 />
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.UserID)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.ReviewID }, new { style = "color:hotpink" }) |
-        @Html.ActionLink("Details", "Details", new { id = item.ReviewID }, new { style = "color:hotpink" }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.ReviewID }, new { style = "color:hotpink" })
-    </td>
-</tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Text)
+            </td>
+            <td>
+                <img src="/Review/RetrieveImage/@item.ReviewID" alt="" height=250 width=200 />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ReviewID }, new { style = "color:hotpink" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ReviewID }, new { style = "color:hotpink" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ReviewID }, new { style = "color:hotpink" })
+            </td>
+        </tr>
+    }
 
 </table>

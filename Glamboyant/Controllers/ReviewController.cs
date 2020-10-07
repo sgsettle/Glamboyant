@@ -12,37 +12,21 @@ namespace Glamboyant.Controllers
 {
     public class ReviewController : Controller
     {
-        private readonly ApplicationDbContext _db = new ApplicationDbContext();
-
         // GET: Appointment
         public ActionResult Index()
         {
-            var content = _db.Reviews.Select(s => new
-            {
-                s.ReviewID,
-                s.Rating,
-                s.Text,
-                s.Image
-            });
-            
-            List<ReviewListItem> reviews = content.Select(item => new ReviewListItem()
-            {
-                ReviewID = item.ReviewID,
-                Rating = item.Rating,
-                Text = item.Text,
-                Image = item.Image
-            }).ToList();
-
-            return View(reviews);
-            //var userID = Guid.Parse(User.Identity.GetUserId());
-            //var service = new ReviewService(userID);
-            //var model = service.GetReviews();
-            //return View(model);
+            var userID = Guid.Parse(User.Identity.GetUserId());
+            var service = new ReviewService(userID);
+            var model = service.GetReviews();
+            return View(model);
         }
+
 
         public ActionResult RetrieveImage(int id)
         {
-            byte[] cover = GetImageFromDB(id);
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new ReviewService(userId);
+            byte[] cover = service.GetImageFromDB(id);
             if (cover != null)
             {
                 return File(cover, "image/jpg");
@@ -51,15 +35,7 @@ namespace Glamboyant.Controllers
             {
                 return null;
             }
-            
-        }
-
-        public byte[] GetImageFromDB(int id)
-        {
-            var q = from temp in _db.Reviews where temp.ReviewID == id select temp.Image;
-            byte[] cover = q.First();
-            return cover;
-        }
+        }        
 
         public ActionResult Create()
         {
@@ -71,12 +47,7 @@ namespace Glamboyant.Controllers
         public ActionResult Create(ReviewCreate model)
         {
             HttpPostedFileBase file = Request.Files["ImageData"];
-            //var photoService = new ReviewCreate();
-            //int i = photoService.UploadImageInDatabase(file, model);
-            //if (i == 1)
-            //{
-            //    return RedirectToAction("Index");
-            //}
+            
             if (!ModelState.IsValid) return View(model);
 
             var service = CreateReviewService();
@@ -107,8 +78,10 @@ namespace Glamboyant.Controllers
             var model =
                 new ReviewEdit
                 {
+                    ReviewID = detail.ReviewID,
                     Rating = detail.Rating,
                     Text = detail.Text,
+                    Image = detail.Image,
                     UserID = detail.UserID
                 };
             return View(model);
@@ -118,6 +91,8 @@ namespace Glamboyant.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, ReviewEdit model)
         {
+            HttpPostedFileBase file = Request.Files["ImageData"];
+
             if (!ModelState.IsValid) return View(model);
 
             if (model.ReviewID != id)
@@ -128,7 +103,7 @@ namespace Glamboyant.Controllers
 
             var service = CreateReviewService();
 
-            if (service.UpdateReview(model))
+            if (service.UpdateReview(file, model))
             {
                 TempData["SaveResult"] = "Your review was updated.";
                 return RedirectToAction("Index");

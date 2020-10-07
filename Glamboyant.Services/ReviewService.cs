@@ -38,15 +38,7 @@ namespace Glamboyant.Services
                 apt.Reviews.Add(entity);
                 return apt.SaveChanges() == 1;
             }
-        }
-
-        public byte[] ConvertToBytes(HttpPostedFileBase image)
-        {
-            byte[] imageBytes = null;
-            BinaryReader reader = new BinaryReader(image.InputStream);
-            imageBytes = reader.ReadBytes((int)image.ContentLength);
-            return imageBytes;
-        }
+        }        
 
         public IEnumerable<ReviewListItem> GetReviews()
         {
@@ -86,13 +78,16 @@ namespace Glamboyant.Services
                         ReviewID = entity.ReviewID,
                         Rating = entity.Rating,
                         Text = entity.Text,
+                        Image = entity.Image,
                         UserID = entity.UserID
                     };
             }
         }
 
-        public bool UpdateReview(ReviewEdit model)
+        public bool UpdateReview(HttpPostedFileBase file, ReviewEdit model)
         {
+            model.Image = ConvertToBytes(file);
+
             using (var rvw = new ApplicationDbContext())
             {
                 var entity =
@@ -102,6 +97,7 @@ namespace Glamboyant.Services
 
                 entity.Rating = model.Rating;
                 entity.Text = model.Text;
+                entity.Image = model.Image;
 
                 return rvw.SaveChanges() == 1;
             }
@@ -120,6 +116,24 @@ namespace Glamboyant.Services
 
                 return rvw.SaveChanges() == 1;
             }
+        }
+
+        public byte[] GetImageFromDB(int id)
+        {
+            using (var rvw = new ApplicationDbContext())
+            {
+                var q = from temp in rvw.Reviews where temp.ReviewID == id select temp.Image;
+                byte[] cover = q.First();
+                return cover;
+            }
+        }
+
+        public byte[] ConvertToBytes(HttpPostedFileBase image)
+        {
+            byte[] imageBytes = null;
+            BinaryReader reader = new BinaryReader(image.InputStream);
+            imageBytes = reader.ReadBytes((int)image.ContentLength);
+            return imageBytes;
         }
     }
 }

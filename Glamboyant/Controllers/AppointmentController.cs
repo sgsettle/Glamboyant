@@ -68,6 +68,7 @@ namespace Glamboyant.Controllers
             var model =
                 new AppointmentEdit
                 {
+                    AppointmentID = detail.AppointmentID,
                     AppointmentDate = detail.AppointmentDate,
                     AppointmentTime = detail.AppointmentTime,
                     Address = detail.Address,
@@ -91,7 +92,7 @@ namespace Glamboyant.Controllers
 
             var service = CreateAppointmentService();
 
-            if (service.UpdateAppointmentService(model))
+            if (service.UpdateAppointment(model))
             {
                 TempData["SaveResult"] = "Your appointment was updated.";
                 return RedirectToAction("Index");

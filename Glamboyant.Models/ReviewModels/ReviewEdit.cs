@@ -14,6 +14,8 @@ namespace Glamboyant.Models.ReviewModels
 
         public int Rating { get; set; }
 
+        public byte[] Image { get; set; }
+
         public int UserID { get; set; }
     }
 }

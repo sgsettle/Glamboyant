@@ -82,7 +82,7 @@ namespace Glamboyant.Services
             }
         }
 
-        public bool UpdateAppointmentService(AppointmentEdit model)
+        public bool UpdateAppointment(AppointmentEdit model)
         {
             using(var apt = new ApplicationDbContext())
             {
