@@ -7,13 +7,13 @@ namespace Glamboyant.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class appointmentUpdate : IMigrationMetadata
+    public sealed partial class enumUpdate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(appointmentUpdate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(enumUpdate));
         
         string IMigrationMetadata.Id
         {
-            get { return "202010021739475_appointmentUpdate"; }
+            get { return "202010082137047_enumUpdate"; }
         }
         
         string IMigrationMetadata.Source

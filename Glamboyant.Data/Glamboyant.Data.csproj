@@ -57,29 +57,13 @@
     <Compile Include="Appointment.cs" />
     <Compile Include="HairService.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202009281507244_InitialCreate.cs" />
-    <Compile Include="Migrations\202009281507244_InitialCreate.Designer.cs">
-      <DependentUpon>202009281507244_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202010082014165_userUpdates.cs" />
+    <Compile Include="Migrations\202010082014165_userUpdates.Designer.cs">
+      <DependentUpon>202010082014165_userUpdates.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202009291440332_firstMigration.cs" />
-    <Compile Include="Migrations\202009291440332_firstMigration.Designer.cs">
-      <DependentUpon>202009291440332_firstMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009301506253_newTables.cs" />
-    <Compile Include="Migrations\202009301506253_newTables.Designer.cs">
-      <DependentUpon>202009301506253_newTables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009301925171_review.cs" />
-    <Compile Include="Migrations\202009301925171_review.Designer.cs">
-      <DependentUpon>202009301925171_review.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010021739475_appointmentUpdate.cs" />
-    <Compile Include="Migrations\202010021739475_appointmentUpdate.Designer.cs">
-      <DependentUpon>202010021739475_appointmentUpdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010051908244_photo.cs" />
-    <Compile Include="Migrations\202010051908244_photo.Designer.cs">
-      <DependentUpon>202010051908244_photo.cs</DependentUpon>
+    <Compile Include="Migrations\202010082137047_enumUpdate.cs" />
+    <Compile Include="Migrations\202010082137047_enumUpdate.Designer.cs">
+      <DependentUpon>202010082137047_enumUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -91,23 +75,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202009281507244_InitialCreate.resx">
-      <DependentUpon>202009281507244_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202010082014165_userUpdates.resx">
+      <DependentUpon>202010082014165_userUpdates.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009291440332_firstMigration.resx">
-      <DependentUpon>202009291440332_firstMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009301506253_newTables.resx">
-      <DependentUpon>202009301506253_newTables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009301925171_review.resx">
-      <DependentUpon>202009301925171_review.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010021739475_appointmentUpdate.resx">
-      <DependentUpon>202010021739475_appointmentUpdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010051908244_photo.resx">
-      <DependentUpon>202010051908244_photo.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202010082137047_enumUpdate.resx">
+      <DependentUpon>202010082137047_enumUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

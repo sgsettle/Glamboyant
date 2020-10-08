@@ -3,16 +3,16 @@ namespace Glamboyant.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class photo : DbMigration
+    public partial class enumUpdate : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.Review", "Image", c => c.Binary());
+            AddColumn("dbo.HairService", "ServiceType", c => c.Int(nullable: false));
         }
         
         public override void Down()
         {
-            DropColumn("dbo.Review", "Image");
+            DropColumn("dbo.HairService", "ServiceType");
         }
     }
 }

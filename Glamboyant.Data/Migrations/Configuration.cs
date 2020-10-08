@@ -10,7 +10,6 @@ namespace Glamboyant.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "Glamboyant.Data.ApplicationDbContext";
         }
 
         protected override void Seed(Glamboyant.Data.ApplicationDbContext context)

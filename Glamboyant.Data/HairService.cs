@@ -13,6 +13,9 @@ namespace Glamboyant.Data
         public int HairServiceId { get; set; }
 
         [Required]
+        public ServiceType ServiceType { get; set; }
+
+        [Required]
         [Display(Name = "Service")]
         public string Name { get; set; }
 
@@ -22,6 +25,8 @@ namespace Glamboyant.Data
         [Required]
         public decimal Price { get; set; }
 
-        public Guid OwnerID { get; set; }
+        public string OwnerID { get; set; }
     }
+
+    public enum ServiceType { Blowout, Makeup, Spraytan, Nails}
 }

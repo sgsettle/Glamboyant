@@ -10,9 +10,9 @@ namespace Glamboyant.Services
 {
     public class HairServiceService
     {
-        private readonly Guid _userId;
+        private readonly string _userId;
 
-        public HairServiceService(Guid userId)
+        public HairServiceService(string userId)
         {
             _userId = userId;
         }
@@ -23,6 +23,7 @@ namespace Glamboyant.Services
                 new HairService()
                 {
                     OwnerID = _userId,
+                    ServiceType = model.ServiceType,
                     Name = model.Name,
                     Description = model.Description,
                     Price = model.Price
@@ -48,6 +49,7 @@ namespace Glamboyant.Services
                                 new HairServiceListItem
                                 {
                                     HairServiceID = e.HairServiceId,
+                                    ServiceType = e.ServiceType,
                                     Name = e.Name,
                                     Description = e.Description,
                                     Price = e.Price
@@ -69,6 +71,7 @@ namespace Glamboyant.Services
                     new HairServiceDetail
                     {
                         HairServiceID = entity.HairServiceId,
+                        ServiceType = entity.ServiceType,
                         Name = entity.Name,
                         Description = entity.Description,
                         Price = entity.Price
@@ -85,6 +88,7 @@ namespace Glamboyant.Services
                         .HairServices
                         .Single(e => e.HairServiceId == model.HairServiceID && e.OwnerID == _userId);
 
+                entity.ServiceType = model.ServiceType;
                 entity.Name = model.Name;
                 entity.Description = model.Description;
                 entity.Price = model.Price;

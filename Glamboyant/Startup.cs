@@ -1,4 +1,5 @@
 ﻿using Glamboyant.Data;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin;
 using Owin;
@@ -11,42 +12,42 @@ namespace Glamboyant
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
-           // CreateRolesAndUsers();
+            CreateRolesAndUsers();
         }
 
-        //private void CreateRolesAndUsers()
-        //{
-        //    ApplicationDbContext context = new ApplicationDbContext();
+        private void CreateRolesAndUsers()
+        {
+            ApplicationDbContext context = new ApplicationDbContext();
 
-        //    var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
-        //    var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+            var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
 
-        //    if (!roleManager.RoleExists("Admin"))
-        //    {
-        //        var role = new IdentityRole();
-        //        role.Name = "Admin";
-        //        roleManager.Create(role);
+            if (!roleManager.RoleExists("Admin"))
+            {
+                var role = new IdentityRole();
+                role.Name = "Admin";
+                roleManager.Create(role);
 
-        //        var user = new ApplicationUser();
-        //        user.UserName = "sgsettle";
-        //        user.Email = "s.settle41@gmail.com";
+                var user = new ApplicationUser();
+                user.UserName = "sgsettle";
+                user.Email = "s.settle41@gmail.com";
 
-        //        string userPWD = "testPass1!";
+                string userPWD = "testPass1!";
 
-        //        var chkUser = UserManager.Create(user, userPWD);
+                var chkUser = UserManager.Create(user, userPWD);
 
-        //        if (chkUser.Succeeded)
-        //        {
-        //            var result1 = UserManager.AddToRole(user.Id, "Admin");
-        //        }
-        //    }
+                if (chkUser.Succeeded)
+                {
+                    var result1 = UserManager.AddToRole(user.Id, "Admin");
+                }
+            }
 
-        //    if (!roleManager.RoleExists("Client"))
-        //    {
-        //        var role = new IdentityRole();
-        //        role.Name = "Client";
-        //        roleManager.Create(role);
-        //    }
-        //}
+            if (!roleManager.RoleExists("User"))
+            {
+                var role = new IdentityRole();
+                role.Name = "User";
+                roleManager.Create(role);
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Glamboyant.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -9,6 +10,10 @@ namespace Glamboyant.Models.HairServiceModels
 {
     public class HairServiceCreate
     {
+        [Required]
+        [Display(Name = "Type of Service")]
+        public ServiceType ServiceType { get; set; }
+
         [Required]
         public string Name { get; set; }
 

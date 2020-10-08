@@ -97,6 +97,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Glamboyant.Data\Glamboyant.Data.csproj">
+      <Project>{FB00A9E8-C686-4D48-A43B-A02B48293C3F}</Project>
+      <Name>Glamboyant.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -14,14 +14,14 @@ namespace Glamboyant.Controllers
         // GET: HairService
         public ActionResult Index()
         {
-            var userID = Guid.Parse(User.Identity.GetUserId());
+            var userID = User.Identity.GetUserId();
             var service = new HairServiceService(userID);
             var model = service.GetHairServices();
             return View(model);
         }
 
         // GET: Create HairService
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -54,6 +54,7 @@ namespace Glamboyant.Controllers
             return View(model);
         }
 
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int id)
         {
             var service = CreateHairServiceService();
@@ -62,6 +63,7 @@ namespace Glamboyant.Controllers
                 new HairServiceEdit
                 {
                     HairServiceID = detail.HairServiceID,
+                    ServiceType = detail.ServiceType,
                     Name = detail.Name,
                     Description = detail.Description,
                     Price = detail.Price
@@ -94,6 +96,7 @@ namespace Glamboyant.Controllers
         }
 
         [ActionName("Delete")]
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int id)
         {
             var svc = CreateHairServiceService();
@@ -118,7 +121,7 @@ namespace Glamboyant.Controllers
 
         private HairServiceService CreateHairServiceService()
         {
-            var userID = Guid.Parse(User.Identity.GetUserId());
+            var userID = User.Identity.GetUserId();
             var service = new HairServiceService(userID);
             return service;
         }

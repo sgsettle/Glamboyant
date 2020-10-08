@@ -1,5 +1,5 @@
 ﻿@model Glamboyant.Models.AppointmentModels.AppointmentCreate
-
+@using Microsoft.AspNet.Identity;
 @{
     ViewBag.Title = "Create";
 }
@@ -14,9 +14,10 @@
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-    
+
 <div class="form-horizontal">
     <hr />
+    @User.Identity.GetUserName();
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
         @Html.LabelFor(model => model.AppointmentDate, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -52,14 +53,16 @@
             @Html.ValidationMessageFor(model => model.HairServiceID, "", new { @class = "text-danger" })
         </div>
     </div>
-
-    <div class="form-group">
+    @*@{ 
+        var username = User.Identity.GetUserName();
+    }*@
+    @*<div class="form-group">
         @Html.LabelFor(model => model.UserID, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.DropDownList("UserID", (IEnumerable<SelectListItem>)ViewBag.Users, htmlAttributes: new { @class = "form-control" })
+            @Html.DisplayFor(model => username, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.UserID, "", new { @class = "text-danger" })
         </div>
-    </div>
+    </div>*@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">

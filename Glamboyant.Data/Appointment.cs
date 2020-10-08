@@ -33,7 +33,7 @@ namespace Glamboyant.Data
 
         [ForeignKey(nameof(User))]
         [Display(Name = "Client")]
-        public int UserID { get; set; }
-        public virtual User User { get; set; }
+        public string UserID { get; set; }
+        public virtual ApplicationUser User { get; set; }
     }
 }

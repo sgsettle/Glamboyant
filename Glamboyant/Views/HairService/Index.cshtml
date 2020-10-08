@@ -9,53 +9,63 @@
         color: hotpink;
         font-family: 'Megrim', cursive;
         font-weight:600;
-">SERVICES</h2>
+">
+    SERVICES
+</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create", null, new { style = "color:hotpink" })
-</p>
-@if (TempData.ContainsKey("SaveResult"))
-{
-    <div class="alert alert-success fade in" role="alert">
 
-        <button type="button" class="close" data-dismiss="alert">
-            <span>&times;</span>
-        </button>
-        @TempData["SaveResult"]
-    </div>
-}
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th></th>
-    </tr>
+    <p>
+        @Html.ActionLink("Create New", "Create", null, new { style = "color:hotpink" })
+    </p>
 
-    @foreach (var item in Model)
+    @if (TempData.ContainsKey("SaveResult"))
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.HairServiceID }, new { style = "color:hotpink" }) |
-                @Html.ActionLink("Details", "Details", new { id = item.HairServiceID }, new { style = "color:hotpink" }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.HairServiceID }, new { style = "color:hotpink" })
-            </td>
-        </tr>
-    }
+        <div class="alert alert-success fade in" role="alert">
 
-</table>
+            <button type="button" class="close" data-dismiss="alert">
+                <span>&times;</span>
+            </button>
+            @TempData["SaveResult"]
+        </div>
+    }
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServiceType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.HairServiceID }, new { style = "color:hotpink" }) |
+            @Html.ActionLink("Details", "Details", new { id = item.HairServiceID }, new { style = "color:hotpink" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.HairServiceID }, new { style = "color:hotpink" })
+        </td>
+    </tr>
+        }
+
+    </table>

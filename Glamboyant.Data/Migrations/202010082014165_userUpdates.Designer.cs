@@ -7,13 +7,13 @@ namespace Glamboyant.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class userUpdates : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(userUpdates));
         
         string IMigrationMetadata.Id
         {
-            get { return "202009281507244_InitialCreate"; }
+            get { return "202010082014165_userUpdates"; }
         }
         
         string IMigrationMetadata.Source

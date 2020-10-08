@@ -12,10 +12,9 @@ namespace Glamboyant.Services
 {
     public class ReviewService
     {
-        private readonly Guid _userID;
-        private readonly ApplicationDbContext _db = new ApplicationDbContext();
+        private readonly string _userID;
 
-        public ReviewService(Guid userID)
+        public ReviewService(string userID)
         {
             _userID = userID;
         }
@@ -47,7 +46,7 @@ namespace Glamboyant.Services
                 var query =
                     rvw
                         .Reviews
-                        .Where(e => e.User.OwnerID == _userID)
+                        .Where(e => e.UserID == _userID)
                         .Select(
                             e =>
                                 new ReviewListItem
@@ -71,7 +70,7 @@ namespace Glamboyant.Services
                 var entity =
                     rvw
                         .Reviews
-                        .Single(e => e.ReviewID == id && e.User.OwnerID == _userID);
+                        .Single(e => e.ReviewID == id && e.UserID == _userID);
                 return
                     new ReviewDetail
                     {
@@ -93,7 +92,7 @@ namespace Glamboyant.Services
                 var entity =
                     rvw
                         .Reviews
-                        .Single(e => e.ReviewID == model.ReviewID && e.User.OwnerID == _userID);
+                        .Single(e => e.ReviewID == model.ReviewID && e.UserID == _userID);
 
                 entity.Rating = model.Rating;
                 entity.Text = model.Text;
@@ -110,7 +109,7 @@ namespace Glamboyant.Services
                 var entity =
                     rvw
                         .Reviews
-                        .Single(e => e.ReviewID == reviewID && e.User.OwnerID == _userID);
+                        .Single(e => e.ReviewID == reviewID && e.UserID == _userID);
 
                 rvw.Reviews.Remove(entity);
 

@@ -17,12 +17,20 @@
     <hr />
     <dl class="dl-horizontal">
 
-            @Html.HiddenFor(model => model.HairServiceID)
+        @Html.HiddenFor(model => model.HairServiceID)
 
 
         @*<dd>
             @Html.DisplayFor(model => model.HairServiceID)
         </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServiceType)
+        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.Name)

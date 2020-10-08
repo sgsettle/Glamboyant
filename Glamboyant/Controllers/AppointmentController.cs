@@ -19,7 +19,7 @@ namespace Glamboyant.Controllers
         // GET: Appointment
         public ActionResult Index()
         {
-            var userID = Guid.Parse(User.Identity.GetUserId());
+            var userID = User.Identity.GetUserId();
             var service = new AppointmentService(userID);
             var model = service.GetAppointments();
             return View(model);
@@ -29,8 +29,8 @@ namespace Glamboyant.Controllers
         {
             var services = new SelectList(_db.HairServices.ToList(), "HairServiceID", "Name");
             ViewBag.HairServices = services;
-            var users = new SelectList(_db.Users.ToList(), "UserID", "FullName");
-            ViewBag.Users = users;
+            //var users = new SelectList(_db.Users.ToList(), "UserID", "FullName");
+           // ViewBag.Users = users;
             return View();
         }
 
@@ -127,7 +127,7 @@ namespace Glamboyant.Controllers
 
         private AppointmentService CreateAppointmentService()
         {
-            var userID = Guid.Parse(User.Identity.GetUserId());
+            var userID = User.Identity.GetUserId();
             var service = new AppointmentService(userID);
             return service;
         }

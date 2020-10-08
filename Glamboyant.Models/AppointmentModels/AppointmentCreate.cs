@@ -26,6 +26,6 @@ namespace Glamboyant.Models.AppointmentModels
         public int HairServiceID { get; set; }
 
         [Display(Name = "Client")]
-        public int UserID { get; set; }
+        public string UserID { get; set; }
     }
 }

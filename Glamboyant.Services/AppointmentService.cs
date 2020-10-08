@@ -10,9 +10,9 @@ namespace Glamboyant.Services
 {
     public class AppointmentService
     {
-        private readonly Guid _userID;
+        private readonly string _userID;
 
-        public AppointmentService(Guid userID)
+        public AppointmentService(string userID)
         {
             _userID = userID;
         }
@@ -43,7 +43,7 @@ namespace Glamboyant.Services
                 var query =
                     apt
                         .Appointments
-                        .Where(e => e.User.OwnerID == _userID)
+                        .Where(e => e.UserID == _userID)
                         .Select(
                             e =>
                                 new AppointmentListItem
@@ -68,7 +68,7 @@ namespace Glamboyant.Services
                 var entity =
                     apt
                         .Appointments
-                        .Single(e => e.AppointmentID == id && e.User.OwnerID == _userID);
+                        .Single(e => e.AppointmentID == id && e.UserID == _userID);
                 return
                     new AppointmentDetail
                     {
@@ -89,7 +89,7 @@ namespace Glamboyant.Services
                 var entity =
                     apt
                         .Appointments
-                        .Single(e => e.AppointmentID == model.AppointmentID && e.User.OwnerID == _userID);
+                        .Single(e => e.AppointmentID == model.AppointmentID && e.UserID == _userID);
 
                 entity.AppointmentDate = model.AppointmentDate;
                 entity.AppointmentTime = model.AppointmentTime;
@@ -107,7 +107,7 @@ namespace Glamboyant.Services
                 var entity =
                     apt
                         .Appointments
-                        .Single(e => e.AppointmentID == appointmentID && e.User.OwnerID == _userID);
+                        .Single(e => e.AppointmentID == appointmentID && e.UserID == _userID);
 
                 apt.Appointments.Remove(entity);
 

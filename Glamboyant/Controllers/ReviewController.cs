@@ -15,7 +15,7 @@ namespace Glamboyant.Controllers
         // GET: Appointment
         public ActionResult Index()
         {
-            var userID = Guid.Parse(User.Identity.GetUserId());
+            var userID = User.Identity.GetUserId();
             var service = new ReviewService(userID);
             var model = service.GetReviews();
             return View(model);
@@ -24,7 +24,7 @@ namespace Glamboyant.Controllers
 
         public ActionResult RetrieveImage(int id)
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
+            var userId = User.Identity.GetUserId();
             var service = new ReviewService(userId);
             byte[] cover = service.GetImageFromDB(id);
             if (cover != null)
@@ -138,7 +138,7 @@ namespace Glamboyant.Controllers
 
         private ReviewService CreateReviewService()
         {
-            var userID = Guid.Parse(User.Identity.GetUserId());
+            var userID = User.Identity.GetUserId();
             var service = new ReviewService(userID);
             return service;
         }
