@@ -3,7 +3,11 @@
     ViewBag.Title = "Register";
 }
 
-<h2>@ViewBag.Title.</h2>
+<h2 style="margin-top: 60px; 
+        text-align:center;
+        color: hotpink;
+        font-family: 'Megrim', cursive;
+        font-weight:600;">@ViewBag.Title.</h2>
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
@@ -49,7 +53,7 @@
     </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
+            <input type="submit" style="background-color: hotpink !important; color: white !important;" class="btn btn-default" value="Register" />
         </div>
     </div>
 }

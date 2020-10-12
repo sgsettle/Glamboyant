@@ -122,6 +122,9 @@ namespace Glamboyant.Services
             using (var rvw = new ApplicationDbContext())
             {
                 var q = from temp in rvw.Reviews where temp.ReviewID == id select temp.Image;
+                //var t = rvw.Reviews.
+                //    Where(e => e.ReviewID == id)
+                //    .Select(e => e.Image);
                 byte[] cover = q.First();
                 return cover;
             }
