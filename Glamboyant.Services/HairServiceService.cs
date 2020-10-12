@@ -43,7 +43,7 @@ namespace Glamboyant.Services
                 var query =
                     hs
                         .HairServices
-                        .Where(e =>  e.OwnerID == _userId)
+                        //.Where(e =>  e.OwnerID == _userId)
                         .Select(
                             e =>
                                 new HairServiceListItem

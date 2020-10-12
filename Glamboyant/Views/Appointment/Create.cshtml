@@ -17,7 +17,7 @@
 
 <div class="form-horizontal">
     <hr />
-    @User.Identity.GetUserName();
+    @User.Identity.GetUserName()
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
         @Html.LabelFor(model => model.AppointmentDate, htmlAttributes: new { @class = "control-label col-md-2" })
