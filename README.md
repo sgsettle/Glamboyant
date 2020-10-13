@@ -1,8 +1,10 @@
 # Glamboyant
 
-Someone who is an exotrovert who embodies the qualities of style, fabulousness, and intelligent wit.
+## Someone who is an exotrovert who embodies the qualities of style, fabulousness, and intelligent wit.
+
 
 ![](glamboyant.png)
+
 
 ## What is Glamboyant?
 
@@ -14,3 +16,4 @@ For developers wanting to view code, feel free to peruse the folders on Github t
 
 For clients and those wanting to see the front-end site, please follow this link: https://glamboyant.azurewebsites.net/
 
+![](GlamboyantLogo.png)
