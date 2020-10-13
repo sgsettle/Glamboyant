@@ -24,5 +24,8 @@ namespace Glamboyant.Models.AppointmentModels
 
         [Display(Name = "Client")]
         public string UserID { get; set; }
+
+        [Display(Name = "Service")]
+        public string Name { get; set; }
     }
 }

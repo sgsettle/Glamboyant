@@ -1,5 +1,5 @@
 ﻿@model Glamboyant.Models.AppointmentModels.AppointmentDetail
-
+@using Microsoft.AspNet.Identity;
 @{
     ViewBag.Title = "Details";
 }
@@ -9,17 +9,19 @@
         color: hotpink;
         font-family: 'Megrim', cursive;
         font-weight:600;
-">APPOINTMENT DETAILS</h2>
+">
+    APPOINTMENT DETAILS
+</h2>
 
 <div>
     <hr />
     <dl class="dl-horizontal">
 
-            @Html.HiddenFor(model => model.AppointmentID)
+        @Html.HiddenFor(model => model.AppointmentID)
 
         @*<dd>
-            @Html.DisplayFor(model => model.AppointmentID)
-        </dd>*@
+                @Html.DisplayFor(model => model.AppointmentID)
+            </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.AppointmentDate)
@@ -46,11 +48,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.HairServiceID)
+            @Html.DisplayNameFor(model => model.Name)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.HairServiceID)
+            @Html.DisplayFor(model => model.Name)
         </dd>
 
         <dt>
@@ -58,12 +60,13 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.UserID)
+            @User.Identity.GetUserName()
+            @*@Html.DisplayFor(model => model.UserID)*@
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new {  id = Model.AppointmentID }, new { style = "color:hotpink" }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AppointmentID }, new { style = "color:hotpink" }) |
     @Html.ActionLink("Back to List", "Index", null, new { style = "color:hotpink" })
 </p>

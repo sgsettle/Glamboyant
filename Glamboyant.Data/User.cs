@@ -7,25 +7,25 @@ using System.Threading.Tasks;
 
 namespace Glamboyant.Data
 {
-    public class User
-    {
-        // LOOK INTO USER ROLES
+    //public class User
+    //{
+    //    // LOOK INTO USER ROLES
 
-        [Key]
-        public int UserID { get; set; }
+    //    [Key]
+    //    public int UserID { get; set; }
 
-        public Guid OwnerID { get; set; }
+    //    public Guid OwnerID { get; set; }
 
-        public string FirstName { get; set; }
+    //    public string FirstName { get; set; }
 
-        public string LastName { get; set; }
+    //    public string LastName { get; set; }
 
-        public string FullName 
-        {
-            get
-            {
-                return $"{FirstName} {LastName}";
-            }
-        }
-    }
+    //    public string FullName 
+    //    {
+    //        get
+    //        {
+    //            return $"{FirstName} {LastName}";
+    //        }
+    //    }
+    //}
 }

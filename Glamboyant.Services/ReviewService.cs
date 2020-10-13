@@ -26,10 +26,10 @@ namespace Glamboyant.Services
             var entity =
                 new Review()
                 {
+                    UserID = _userID,
                     Rating = model.Rating,
                     Text = model.Text,
-                    Image = model.Image,
-                    UserID = model.UserID
+                    Image = model.Image
                 };
 
             using (var apt = new ApplicationDbContext())

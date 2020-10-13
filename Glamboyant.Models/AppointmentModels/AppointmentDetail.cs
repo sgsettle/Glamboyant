@@ -17,6 +17,9 @@ namespace Glamboyant.Models.AppointmentModels
         [Display(Name = "Appointment Time")]
         public TimeSpan AppointmentTime { get; set; }
 
+        [Display(Name = "Service")]
+        public string Name { get; set; }
+
         public string Address { get; set; }
 
         [Display(Name = "Service")]

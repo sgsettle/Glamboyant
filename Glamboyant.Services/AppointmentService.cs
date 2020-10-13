@@ -26,7 +26,7 @@ namespace Glamboyant.Services
                     AppointmentTime = model.AppointmentTime,
                     Address = model.Address,
                     HairServiceID = model.HairServiceID,
-                    UserID = model.UserID
+                    UserID = _userID
                 };
 
             using (var apt = new ApplicationDbContext())
@@ -48,12 +48,13 @@ namespace Glamboyant.Services
                             e =>
                                 new AppointmentListItem
                                 {
+                                    UserID = e.UserID,
                                     AppointmentID = e.AppointmentID,
                                     AppointmentDate = e.AppointmentDate,
                                     AppointmentTime = e.AppointmentTime,
                                     Address = e.Address,
                                     HairServiceID = e.HairServiceID,
-                                    UserID = e.UserID
+                                    Name = e.HairService.Name
                                 }
                         );
 
@@ -77,6 +78,7 @@ namespace Glamboyant.Services
                         AppointmentTime = entity.AppointmentTime,
                         Address = entity.Address,
                         HairServiceID = entity.HairServiceID,
+                        Name = entity.HairService.Name,
                         UserID = entity.UserID
                     };
             }

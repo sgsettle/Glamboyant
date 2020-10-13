@@ -33,7 +33,7 @@ namespace Glamboyant.Data
         }
 
         public DbSet<HairService> HairServices { get; set; }
-        public DbSet<User> Users { get; set; }
+       // public DbSet<User> Users { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<Review> Reviews { get; set; }
 

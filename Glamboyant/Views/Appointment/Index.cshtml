@@ -26,7 +26,7 @@
         @TempData["SaveResult"]
     </div>
 }
-<table class="table">
+@*<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.AppointmentDate)
@@ -44,33 +44,41 @@
             @Html.DisplayNameFor(model => model.UserID)
         </th>
         <th></th>
-    </tr>
-
+    </tr>*@
+<div class="row text-center">
     @foreach (var item in Model)
     {
-        <tr>
-            @Html.HiddenFor(modelItem => item.AppointmentID)
-            <td>
+    <div class="card col-md-4" style="height: 175px; width: 330px; padding: 5px 5px 5px 5px; margin: 1em 1em 1em 1em; box-shadow: 0 0 5px 3px hotpink; margin-right: 45px;">
+
+        @Html.HiddenFor(modelItem => item.AppointmentID)
+        <div style="text-align: center; margin-bottom: 5px; color: hotpink; font-family: 'Megrim', cursive; font-weight:600; font-size:20px;">
+            @Html.DisplayFor(modelItem => item.Name)
+            </div>
+            <div>
+
                 @Html.DisplayFor(modelItem => item.AppointmentDate)
-            </td>
-            <td>
+            </div>
+            <div>
+
                 @Html.DisplayFor(modelItem => item.AppointmentTime)
-            </td>
-            <td>
+            </div>
+
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
+            </td>*@
+            @*<td>
                 @Html.DisplayFor(modelItem => item.HairServiceID)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.UserID)
-            </td>
-            <td>
+            </td>*@
+            <div>
                 @Html.ActionLink("Edit", "Edit", new { id = item.AppointmentID }, new { style = "color:hotpink" }) |
                 @Html.ActionLink("Details", "Details", new { id = item.AppointmentID }, new { style = "color:hotpink" }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.AppointmentID }, new { style = "color:hotpink" })
-            </td>
-        </tr>
-    }
+            </div>
 
-</table>
+        </div>
+        }
+    </div>
+            @*</table>*@

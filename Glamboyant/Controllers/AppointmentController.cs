@@ -29,8 +29,6 @@ namespace Glamboyant.Controllers
         {
             var services = new SelectList(_db.HairServices.ToList(), "HairServiceID", "Name");
             ViewBag.HairServices = services;
-            //var users = new SelectList(_db.Users.ToList(), "UserID", "FullName");
-           // ViewBag.Users = users;
             return View();
         }
 
@@ -72,8 +70,7 @@ namespace Glamboyant.Controllers
                     AppointmentDate = detail.AppointmentDate,
                     AppointmentTime = detail.AppointmentTime,
                     Address = detail.Address,
-                    HairServiceID = detail.HairServiceID,
-                    UserID = detail.UserID
+                    HairServiceID = detail.HairServiceID
                 };
             return View(model);
         }
