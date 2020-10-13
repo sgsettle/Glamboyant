@@ -1,6 +1,6 @@
 # Glamboyant
 
-## Someone who is an exotrovert who embodies the qualities of style, fabulousness, and intelligent wit.
+## Someone who is an exotrovert who embodies the qualities of style, fabulousness, and intelligent wit. <br />
 
 
 ![](glamboyant.png)
