@@ -187,6 +187,7 @@
   <ItemGroup>
     <Content Include="Assets\blowdryer.png" />
     <Content Include="Assets\GlamboyantLogo.png" />
+    <Content Include="Assets\GlamboyantLogoTN.png" />
     <Content Include="Assets\Hair1.jpg" />
     <Content Include="Assets\hair2.jpg" />
     <Content Include="Assets\spraytan.png" />
