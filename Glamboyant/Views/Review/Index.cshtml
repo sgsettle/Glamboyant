@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<Glamboyant.Models.ReviewModels.ReviewListItem>
-
+@using Microsoft.AspNet.Identity;
 @{
     ViewBag.Title = "Index";
 }
@@ -26,7 +26,7 @@
         @TempData["SaveResult"]
     </div>
 }
-<table class="table">
+@*<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Rating)
@@ -41,29 +41,38 @@
             @Html.DisplayNameFor(model => model.UserID)
         </th>
         <th></th>
-    </tr>
+    </tr>*@
 
+<div class="row text-center">
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rating)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Text)
-            </td>
-            <td>
+        <div class="card col-md-4" style="min-height: 350px; width: 230px; padding: 5px 5px 5px 5px; margin: 1em 1em 1em 1em; box-shadow: 0 0 5px 3px hotpink; margin-right: 45px;">
+            <div style="padding-top:5px;">
+
                 <img src="/Review/RetrieveImage/@item.ReviewID" alt="" height=250 width=200 />
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserID)
-            </td>
-            <td>
+            </div>
+            <div>
+
+            @Html.DisplayFor(modelItem => item.Rating)
+            </div>
+            <div>
+
+                @Html.DisplayFor(modelItem => item.Text)
+            </div>
+
+            <div>
+
+                @User.Identity.GetUserName()
+            </div>
+                @*@Html.DisplayFor(modelItem => item.UserID)*@
+
+            <div>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ReviewID }, new { style = "color:hotpink" }) |
                 @Html.ActionLink("Details", "Details", new { id = item.ReviewID }, new { style = "color:hotpink" }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.ReviewID }, new { style = "color:hotpink" })
-            </td>
-        </tr>
-    }
+            </div>
 
-</table>
+        </div>
+        }
+</div>
+@*</table>*@

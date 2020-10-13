@@ -20,6 +20,7 @@ namespace Glamboyant.Data
         public byte[] Image { get; set; }
 
         [ForeignKey(nameof(User))]
+        [Display(Name = "Client")]
         public string UserID { get; set; }
         public virtual ApplicationUser User { get; set; }
     }

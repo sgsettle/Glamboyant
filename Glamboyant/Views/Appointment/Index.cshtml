@@ -51,14 +51,14 @@
     <div class="card col-md-4" style="height: 175px; width: 330px; padding: 5px 5px 5px 5px; margin: 1em 1em 1em 1em; box-shadow: 0 0 5px 3px hotpink; margin-right: 45px;">
 
         @Html.HiddenFor(modelItem => item.AppointmentID)
-        <div style="text-align: center; margin-bottom: 5px; color: hotpink; font-family: 'Megrim', cursive; font-weight:600; font-size:20px;">
+        <div style="text-align: center; margin-bottom: 5px; color: hotpink; font-family: 'Megrim', cursive; font-weight:600; font-size:30px;">
             @Html.DisplayFor(modelItem => item.Name)
             </div>
-            <div>
+            <div style="font-size: 18px;">
 
                 @Html.DisplayFor(modelItem => item.AppointmentDate)
             </div>
-            <div>
+            <div style="font-size:18px; margin-bottom:5px;">
 
                 @Html.DisplayFor(modelItem => item.AppointmentTime)
             </div>
