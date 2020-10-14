@@ -37,6 +37,7 @@ namespace Glamboyant.Controllers
             }
         }        
 
+        [Authorize]
         public ActionResult Create()
         {
             return View();

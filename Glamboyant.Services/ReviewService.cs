@@ -46,7 +46,7 @@ namespace Glamboyant.Services
                 var query =
                     rvw
                         .Reviews
-                        .Where(e => e.UserID == _userID)
+                        //.Where(e => e.UserID == _userID)
                         .Select(
                             e =>
                                 new ReviewListItem

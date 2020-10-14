@@ -46,10 +46,10 @@
 <div class="row text-center">
     @foreach (var item in Model)
     {
-        <div class="card col-md-4" style="min-height: 350px; width: 230px; padding: 5px 5px 5px 5px; margin: 1em 1em 1em 1em; box-shadow: 0 0 5px 3px hotpink; margin-right: 45px;">
+        <div class="card col-md-4" style="min-height: 350px; width: 245px; padding: 5px 5px 5px 5px; margin: 1em 1em 1em 1em; box-shadow: 0 0 5px 3px hotpink; margin-right: 25px;">
             <div style="padding-top:5px;">
 
-                <img src="/Review/RetrieveImage/@item.ReviewID" alt="" height=250 width=200 />
+                <img src="/Review/RetrieveImage/@item.ReviewID" alt="" height=250 width=220 />
             </div>
             <div>
 
@@ -62,7 +62,7 @@
 
             <div>
 
-                @User.Identity.GetUserName()
+               @* @User.Identity.GetUserName()*@
             </div>
                 @*@Html.DisplayFor(modelItem => item.UserID)*@
 

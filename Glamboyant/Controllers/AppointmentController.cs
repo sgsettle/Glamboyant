@@ -13,7 +13,7 @@ namespace Glamboyant.Controllers
     [Authorize]
     public class AppointmentController : Controller
     {
-        private ApplicationDbContext _db = new ApplicationDbContext();
+        //private ApplicationDbContext _db = new ApplicationDbContext();
 
 
         // GET: Appointment
@@ -27,8 +27,8 @@ namespace Glamboyant.Controllers
 
         public ActionResult Create()
         {
-            var services = new SelectList(_db.HairServices.ToList(), "HairServiceID", "Name");
-            ViewBag.HairServices = services;
+            //var services = new SelectList(_db.HairServices.ToList(), "HairServiceID", "Name");
+            ViewBag.HairServiceID = GetHairServiceNames();
             return View();
         }
 
@@ -127,6 +127,20 @@ namespace Glamboyant.Controllers
             var userID = User.Identity.GetUserId();
             var service = new AppointmentService(userID);
             return service;
+        }
+
+        private List<SelectListItem> GetHairServiceNames()
+        {
+            var service = new HairServiceService(User.Identity.GetUserId());
+            List<SelectListItem> hairServices = new List<SelectListItem>();
+            foreach (var hairService in service.GetHairServices())
+                hairServices.Add(
+                    new SelectListItem
+                    {
+                        Text = hairService.Name
+                        //Value = hairService.HairServiceID.ToString()
+                    });
+            return hairServices;
         }
     }
 }

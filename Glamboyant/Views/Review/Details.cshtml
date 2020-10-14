@@ -1,17 +1,17 @@
 ﻿@model Glamboyant.Models.ReviewModels.ReviewDetail
-
+@using Microsoft.AspNet.Identity;
 @{
     ViewBag.Title = "Details";
 }
 
-    <h2 style="        margin-top: 60px;
+<h2 style="        margin-top: 60px;
         text-align: center;
         color: hotpink;
         font-family: 'Megrim', cursive;
         font-weight:600;
 ">
-        REVIEW DETAILS
-    </h2>
+    REVIEW DETAILS
+</h2>
 
 <div>
     <hr />
@@ -21,8 +21,8 @@
 
 
         @*<dd>
-            @Html.DisplayFor(model => model.ReviewID)
-        </dd>*@
+                @Html.DisplayFor(model => model.ReviewID)
+            </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.Rating)
@@ -53,12 +53,13 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.UserID)
+            @User.Identity.GetUserName()
+            @*@Html.DisplayFor(model => model.UserID)*@
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new {  id = Model.ReviewID }, new { style = "color:hotpink" }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ReviewID }, new { style = "color:hotpink" }) |
     @Html.ActionLink("Back to List", "Index", null, new { style = "color:hotpink" })
 </p>
